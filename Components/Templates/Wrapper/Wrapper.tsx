@@ -8,6 +8,7 @@ import {
   DrawerOverlay,
   HStack,
   Text,
+  Tooltip,
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
@@ -20,9 +21,10 @@ import {
   AiOutlineIdcard,
   AiOutlineFile,
   AiOutlinePhone,
+  AiOutlineCloudDownload,
 } from "react-icons/ai";
 import { HiBars3 } from "react-icons/hi2";
-import { GrAndroid } from "react-icons/gr";
+import { GrAndroid, GrCloudDownload } from "react-icons/gr";
 interface Props {
   children: React.ReactNode;
 }
@@ -143,12 +145,13 @@ const SideShortCut = () => {
     <Box
       pos="fixed"
       left="0"
-      bottom="md"
+      // bottom="md"
       display={{ base: "none", md: flex }}
-      alignItems="center"
-      justifyContent="center"
+      alignItems="space-between"
+      justifyContent="space-between"
       flexDir="column"
       height="100vh"
+      py="5rem"
     >
       <Box
         display={{ base: "none", md: flex }}
@@ -156,24 +159,55 @@ const SideShortCut = () => {
         justifyContent="center"
         flexDir="column"
         height="60%"
+        my="auto"
+        
       >
         {links.map((item, idx) => (
-          <Box
-            display={flex}
-            alignItems="center"
-            justifyContent="center"
+          <Tooltip
             key={idx}
-            as={Link}
-            color="#f1f1f1"
-            href={item.link}
-            fontSize={35}
-            p="1rem"
+            placement="right-end"
+            hasArrow={true}
+            textTransform="capitalize"
+            label={item.name}
           >
-            {item.icon}
-          </Box>
+            <Box
+              display={flex}
+              alignItems="center"
+              justifyContent="center"
+              as={Link}
+              color="#f1f1f1"
+              href={item.link}
+              fontSize={35}
+              p="1rem"
+            >
+              {item.icon}
+            </Box>
+          </Tooltip>
         ))}
       </Box>
+      <DownloadResumeBtn />
     </Box>
   );
 };
+const DownloadResumeBtn = () => {
+  return (
+    <Tooltip hasArrow={true} placement="right-end" label="download resume">
+      <Box
+        alignSelf="flex-end"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        justifySelf="flex-end"
+        color="green.500"
+        fontSize={40}
+        cursor="pointer"
+        marginTop="auto"
+        mx="auto"
+      >
+        {downloadIcon}
+      </Box>
+    </Tooltip>
+  );
+};
+const downloadIcon = <AiOutlineCloudDownload />;
 export default Wrapper;

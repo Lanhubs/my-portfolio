@@ -1,83 +1,129 @@
 import React from "react";
-import { Box, Flex, Grid, HStack, Image as Img, VStack } from "@chakra-ui/react";
-import Image from "next/image";
-import myImg from "../../assets/me.png";
+import styles from "../../styles/Home.module.css";
 import {
-  AiOutlineLinkedin,
-  AiOutlineTwitter,
-  AiOutlineGithub,
-  AiOutlineWhatsApp,
-  AiOutlineMail,
-  AiOutlineFacebook,
-} from "react-icons/ai";
+  Box,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  HStack,
+  Image as Img,
+  Stack,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
+import Image from "next/image";
+
 import Link from "next/link";
+import { contactLinks, skills } from "../data";
+
 type Props = {};
 
 const Details = (props: Props) => {
   return (
     <Flex
       direction={{ base: "column", md: "row" }}
-      padding={{ base: "2rem", md: "3.5rem 7%" }}
-      height={{ base: "50%", md: "70%" }}
+      padding={{ base: "2rem", md: "3.5rem 5%" }}
+      height={{ base: "50%", md: "100vh" }}
+      gap={10}
     >
-      <VStack className="profilePic" as="div" width={{base:"", md: "30%"}} height="100%">
-        <Img
-          as={Image}
-          height={{base: "100%", md:"81vh"}}
-          width="100%"
-          
-          backgroundColor="rgba(0, 0, 0, 0.5)"
-          bgBlendMode="darken"
-          // blendMode="darken"
-          src={myImg}
-          
-          alt="my image"
-        />
-        <HStack>
-          {contactLinks.map((item, idx) => (
-            <Box as={Link} color="whiteAlpha.600" href={item.link} fontSize={30} key={idx}>
-              {item.icon}
-            </Box>
-          ))}
-        </HStack>
+      {/* profile image */}
+      <VStack
+        as="div"
+        className={styles.profilePic}
+        backgroundSize="cover"
+        width={{ base: "", md: "35%" }}
+        height="100%"
+      >
+        <Flex
+          height="20%"
+          marginTop="auto"
+          marginBottom="0"
+          as="div"
+          className={styles.myImg}
+          // py="1rem"
+          flexDir="column"
+          gap="0.7rem"
+          alignItems="center"
+          justifyContent="center"
+          width="full"
+        >
+          <Heading fontSize={20} color="whiteAlpha.700">
+            Habeeb Muhammed Olanrewaju
+          </Heading>
+          <Text
+            color="green.600"
+            textTransform="capitalize"
+            letterSpacing={1}
+            fontSize={18}
+          >
+            Software developer
+          </Text>
+          <HStack gap={1}>
+            {contactLinks.map((item, idx) => (
+              <Box
+                as={Link}
+                color="whiteAlpha.600"
+                href={item.link}
+                fontSize={30}
+                key={idx}
+              >
+                {item.icon}
+              </Box>
+            ))}
+          </HStack>
+        </Flex>
       </VStack>
-      <Grid flex={1}>
+      <Stack py="5%" flex={1} height="100%" gap="1rem">
+        <Heading
+          color="whiteAlpha.800"
+          textTransform="capitalize"
+        >
+          about me
+        </Heading>
+        <Text color="whiteAlpha.600" w="90%">
+          Prolific full stack MERN Stack web developer with a passion for beating my
+          "past-bests". Improving my skills by building challenging web
+          applications using challenging but helpful web technogies. Always
+          looking for the best technologies to adopt upon beuilding a product
+          with the right designs. Always open to learning new technologies
+          whether to solve a problem or to improve my proficiency. And always open
+          to working with a team to learn and to build great products that best solve
+          the problems.
+        </Text>
+        <Heading
+          color="whiteAlpha.800"
+          alignSelf="flex-start"
+          justifySelf="flex-start"
+        >
+          My Skills
+        </Heading>
+        <Grid
+          gridTemplateColumns="1fr 1fr"
+          gap={10}
+          width="90%"
+          as="div"
+          // className={styles.skillsGrid}
+        >
+          {skills.map((item, idx) => (
+            <GridItem
+              padding="1rem"
+              key={idx}
+              display="flex"
+              flexDir="column"
+              gap={1}
+            >
+              <Heading color="green.700">{item.icon}</Heading>
+              <Heading color="whiteAlpha.800" fontSize={20}>
+                {item.skill}
+              </Heading>
 
-      </Grid>
+              <Text color="whiteAlpha.500">{item.about}</Text>
+            </GridItem>
+          ))}
+        </Grid>
+      </Stack>
     </Flex>
   );
 };
 export default Details;
-
-const contactLinks = [
-  {
-    icon: <AiOutlineLinkedin />,
-    link: "https://www.linkedin.com/in/lanre-muh-d-71a721227/",
-    name: "linkedIn",
-  },
-  {
-    icon: <AiOutlineWhatsApp />,
-    link: "https://wa.me/+2348108685989",
-    name: "whatsapp",
-  },
-  {
-    icon: <AiOutlineMail />,
-    link: "muhammedolanrewaju56@gmail.com",
-    name: "gmail",
-  },
-  {
-    icon: <AiOutlineGithub />,
-    link: "https://github.com/Lanhubs",
-    name: "Github",
-  },
-  {
-    icon: <AiOutlineTwitter />,
-    link: "https://twitter.com/Habeebllahi8",
-    name: "twitter",
-  },
-  {
-    icon: <AiOutlineFacebook />,
-    name: "facebook",
-    link: "https://www.facebook.com/habeeb.muhammad.758/",
-  },
-];

@@ -6,25 +6,22 @@ import {
   DrawerBody,
   DrawerContent,
   DrawerOverlay,
-  HStack,
   Text,
   Tooltip,
   useDisclosure,
-  VStack,
 } from "@chakra-ui/react";
 
 import Link from "next/link";
 import {
-  AiOutlineBars,
   AiOutlineHome,
   AiOutlineUser,
   AiOutlineIdcard,
   AiOutlineFile,
-  AiOutlinePhone,
   AiOutlineCloudDownload,
 } from "react-icons/ai";
 import { HiBars3 } from "react-icons/hi2";
-import { GrAndroid, GrCloudDownload } from "react-icons/gr";
+import { GrAndroid } from "react-icons/gr";
+import { useRouter } from "next/router";
 interface Props {
   children: React.ReactNode;
 }
@@ -53,6 +50,7 @@ const links = [
 ];
 // Header component
 const Header = () => {
+  const route = useRouter();
   return (
     <Box
       height="10%"
@@ -66,10 +64,10 @@ const Header = () => {
     >
       <SideBar>
         <Button
-          display={{ base: "flex", md: "flex" }}
+          display={{ base: "flex", md: "none" }}
           bg="rgba(255, 255, 255, 0.4)"
           color="#fff"
-          rounded={0}
+          rounded={10}
           children={<HiBars3 fontSize={20} />}
         />
       </SideBar>
@@ -81,7 +79,9 @@ const Header = () => {
             fontSize={20}
             px="1rem"
             w="fit-content"
-            color="#f2f2f2"
+            fontWeight={"bold"}
+            textTransform="capitalize"
+            color={route.pathname === item.link ? "green.600" : "#f2f2f2"}
             as={Link}
           >
             {item.name}
@@ -92,6 +92,7 @@ const Header = () => {
   );
 };
 const SideBar = (props: Props) => {
+  const route = useRouter();
   const { isOpen, onClose, onOpen } = useDisclosure();
   return (
     <>
@@ -119,14 +120,19 @@ const SideBar = (props: Props) => {
                   color: "#D3D3D3",
                 }}
                 alignItems="center"
-                color="#f1f1f1"
+                color={route.pathname === item.link ? "green.600" : "#f2f2f2"}
                 key={idx}
                 as={Link}
                 href={item.link}
                 fontSize={25}
               >
                 {item.icon}
-                <Text fontSize={18} color="#f1f1f1" fontWeight={600}>
+                <Text
+                  fontSize={18}
+                  color={route.pathname === item.link ? "green.600" : "#f2f2f2"}
+                 textTransform="capitalize"
+                  fontWeight={600}
+                >
                   {item.name}
                 </Text>
               </Box>
@@ -141,6 +147,7 @@ const SideBar = (props: Props) => {
 const flex =
   "flex" || "-ms-flex" || "-ms-flexbox" || "-webkit-flex" || "flexbox";
 const SideShortCut = () => {
+  const route = useRouter();
   return (
     <Box
       pos="fixed"
@@ -160,7 +167,6 @@ const SideShortCut = () => {
         flexDir="column"
         height="60%"
         my="auto"
-        
       >
         {links.map((item, idx) => (
           <Tooltip
@@ -175,7 +181,7 @@ const SideShortCut = () => {
               alignItems="center"
               justifyContent="center"
               as={Link}
-              color="#f1f1f1"
+              color={route.pathname === item.link ? "green.600" : "#f2f2f2"}
               href={item.link}
               fontSize={35}
               p="1rem"

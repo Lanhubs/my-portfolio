@@ -7,9 +7,11 @@ import {
   Link as ChakraLink,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 type Props = {};
 const Header = ({}: Props) => {
+  const route = useRouter();
   useEffect(() => {}, []);
   return (
     <Box w="100vw" px="10%" height="10%" py="1rem">
@@ -18,7 +20,11 @@ const Header = ({}: Props) => {
           {headerLinks.map((item, idx) => (
             <Box
               p="10px"
-              color="whiteAlpha.700"
+              color={
+                route.pathname.replace("/", "") === item.link
+                ? "green.600"
+                : "whiteAlpha.700"
+              }
               fontSize={18}
               as={Link}
               href={item.link}

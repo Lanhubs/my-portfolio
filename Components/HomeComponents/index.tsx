@@ -83,7 +83,7 @@ const Details = (props: Props) => {
         </Heading>
         <Text color="whiteAlpha.600" w="90%">
           Prolific full stack MERN Stack web developer with a passion for beating my
-          "past-bests". Improving my skills by building challenging web
+          "past-bests". Improving My Services by building challenging web
           applications using challenging but helpful web technogies. Always
           looking for the best technologies to adopt upon beuilding a product
           with the right designs. Always open to learning new technologies
@@ -96,7 +96,7 @@ const Details = (props: Props) => {
           alignSelf="flex-start"
           justifySelf="flex-start"
         >
-          My Skills
+          My Services
         </Heading>
         <Grid
           gridTemplateColumns="1fr 1fr"

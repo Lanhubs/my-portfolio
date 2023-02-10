@@ -41,7 +41,7 @@ const Skills = () => {
         {skills.map((item, idx) => (
           <HStack key={idx} alignItems="center" rowGap="1rem" gap="1rem">
             <Text fontSize={30}>{item.icon}</Text>
-            <Text width={200}>{item.name}</Text>
+            <Text width={220}>{item.name}</Text>
 
             <RangeSlider
               ringColor={"#fff"}

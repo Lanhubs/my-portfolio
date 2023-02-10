@@ -54,13 +54,14 @@ const Skills = () => {
                   : 50,
               ]}
             >
+            
               <RangeSliderTrack height={"2px"} />
               <RangeSliderThumb
                 index={1}
                 ringColor="0"
                 border="1px solid rgaa(0, 255, 0, 0.2)"
                 boxSize={"15px"}
-              ></RangeSliderThumb>
+              />
             </RangeSlider>
           </HStack>
         ))}

@@ -3,6 +3,7 @@ import {Box, Flex} from "@chakra-ui/react"
 import Wrapper from '../../Components/Templates/Wrapper/Wrapper'
 import Skills from './Skills'
 import Experiences from './Experiences'
+import OtherThings from './OtherThings'
 type Props = {}
 
 const index = (props: Props) => {
@@ -12,6 +13,7 @@ const index = (props: Props) => {
         <Flex gap="10%">
           <Skills />
           <Experiences/>
+          <OtherThings/>
         </Flex>
       </Box>
     </Wrapper>

@@ -12,6 +12,7 @@ import React from "react";
 import { contactLinks } from "../../Components/data";
 import Wrapper from "../../Components/Templates/Wrapper/Wrapper";
 import styles from "../../styles/Home.module.css";
+
 type Props = {};
 
 const index = (props: Props) => {
@@ -85,20 +86,51 @@ const index = (props: Props) => {
           >
             muhammedolanrewaju56@gmail.com
           </Box>
-          <Text mt="2rem" marginTop="2rem" color="whiteAlpha.600" w="90%" fontSize={18} lineHeight="8">
+          <Text
+            mt="2rem"
+            marginTop="2rem"
+            color="whiteAlpha.600"
+            w="90%"
+            fontSize={18}
+            lineHeight="8"
+          >
             Prolific full stack MERN Stack web developer with a passion for
-            beating my "past-bests". Improving My Services by building challenging
-            web applications using challenging but innovative web technogies.
-            Always looking for the best technologies to adopt upon beuilding a
-            product with the right designs. Always open to learning new
-            technologies whether to solve a problem or to improve my
+            beating my "past-bests". Improving My Services by building
+            challenging web applications using challenging but innovative web
+            technogies. Always looking for the best technologies to adopt upon
+            beuilding a product with the right designs. Always open to learning
+            new technologies whether to solve a problem or to improve my
             proficiency. And always open to working with a team to learn and to
             build great products that best solve the problems.
           </Text>
-          <Box justifyContent="center" display="flex" justifySelf="flex-end" alignSelf={"flex-end"} color="#f1f1f1" flexDir="column">
-                <Text>Kano or Ilorin Nigeria</Text>
-                <Text>Gwarzo Road or Ganmo</Text>
-
+          <Box
+            justifyContent="center"
+            display="flex"
+            justifySelf="flex-end"
+            color="#f1f1f1"
+            justifyContent="flex-end"
+            alignItems="center"
+            flexDir="column"
+            flex={1}
+          >
+            <Text fontSize="larger" fontWeight="bold">
+            Gwarzo Road, Kano Nigeria
+            </Text>
+            <Text
+              _before={{
+                content: '""',
+                width: "50px",
+                backgroundColor: "green",
+              }}
+              _after={{
+                content: '""',
+                width: "50px",
+                backgroundColor: "green",
+              }}
+              fontSize="larger" fontWeight="bold"
+            >
+              Ga-akanbi Ilorin Nigeria
+            </Text>
           </Box>
         </Stack>
       </Flex>

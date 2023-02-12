@@ -1,7 +1,7 @@
 import { Box, Heading, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import styles from "../../../styles/Home.module.css";
-import { Timeline, Avatar } from "@mantine/core";
+import { Timeline } from "@mantine/core";
 type Props = {};
 
 const Experiences = (props: Props) => {

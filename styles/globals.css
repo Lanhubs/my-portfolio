@@ -14,10 +14,16 @@ a {
 * {
   box-sizing: border-box;
 }
-.profilePic{
+.profilePic {
   background-image: url("../assets/me.png");
 }
 
+.st0 {
+  fill: #fff;
+}
+.st1 {
+  fill: #000;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

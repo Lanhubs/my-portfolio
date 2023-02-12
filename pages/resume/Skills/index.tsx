@@ -1,16 +1,12 @@
 import {
-  Flex,
-  Box,
+  
   Stack,
   Heading,
   HStack,
   Text,
-  Progress,
   RangeSlider,
   RangeSliderThumb,
-  RangeSliderMark,
-  SliderFilledTrack,
-  RangeSliderFilledTrack,
+ 
   RangeSliderTrack,
 } from "@chakra-ui/react";
 
@@ -22,12 +18,8 @@ import {
   FaNodeJs,
   FaPhp,
 } from "react-icons/fa";
-import {
-  AiOutlineAndroid,
-  AiOutlineDatabase,
-  AiTwotoneDatabase,
-} from "react-icons/ai";
-import { GrDatabase, GrMysql, GrReactjs } from "react-icons/gr";
+
+import { GrMysql, GrReactjs } from "react-icons/gr";
 import { TriangleUpIcon } from "@chakra-ui/icons";
 
 type skillsProps = {};

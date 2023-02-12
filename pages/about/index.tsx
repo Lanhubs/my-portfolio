@@ -5,6 +5,7 @@ import {
   HStack,
   Stack,
   Text,
+  useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
 import Link from "next/link";
@@ -73,7 +74,7 @@ const index = (props: Props) => {
         </VStack>
         <Stack py="5%" flex={1} height="100%">
           <Heading
-            color="whiteAlpha.800"
+            color={useColorModeValue("whiteAlpha.800", "blackAlpha.800")}
             fontSize={30}
             textTransform="capitalize"
           >
@@ -95,7 +96,7 @@ const index = (props: Props) => {
             lineHeight="8"
           >
             Prolific full stack MERN Stack web developer with a passion for
-            beating my "past-bests". Improving My Services by building
+            beating my &quot;past-bests &quot;. Improving My Services by building
             challenging web applications using challenging but innovative web
             technogies. Always looking for the best technologies to adopt upon
             beuilding a product with the right designs. Always open to learning
@@ -104,7 +105,6 @@ const index = (props: Props) => {
             build great products that best solve the problems.
           </Text>
           <Box
-            justifyContent="center"
             display="flex"
             justifySelf="flex-end"
             color="#f1f1f1"

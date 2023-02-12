@@ -68,8 +68,9 @@ const Header = () => {
           bg="rgba(255, 255, 255, 0.4)"
           color="#fff"
           rounded={10}
-          children={<HiBars3 fontSize={20} />}
-        />
+        >
+          <HiBars3 fontSize={20} />
+        </Button>
       </SideBar>
       <Box display={{ base: "none", md: flex }} alignItems="center" gap={1}>
         {links.map((item, idx) => (
@@ -130,7 +131,7 @@ const SideBar = (props: Props) => {
                 <Text
                   fontSize={18}
                   color={route.pathname === item.link ? "green.600" : "#f2f2f2"}
-                 textTransform="capitalize"
+                  textTransform="capitalize"
                   fontWeight={600}
                 >
                   {item.name}

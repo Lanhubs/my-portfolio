@@ -1,9 +1,19 @@
-import { Avatar, Box, Heading, HStack, Text, VStack, Image as Img, Stack } from "@chakra-ui/react";
+import {
+  Avatar,
+  Box,
+  Heading,
+  HStack,
+  Text,
+  VStack,
+  Image as Img,
+  Stack,
+} from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import useGithubStats from "react-github-user-stats";
 import GitHubCalendar from "react-github-calendar";
 import { Loader } from "@mantine/core";
 import Image from "next/image";
+import Link from "next/link";
 const userData = () => {
   const { error, loading, userData } = useGithubStats("Lanhubs");
   const [userDetails, setuserData] = useState({});
@@ -38,7 +48,20 @@ const userData = () => {
           <Heading>Github Details</Heading>
           <HStack>
             {/* <Avatar src={userData ? userData?.avatar_url: ""} as={Image} /> */}
-          <Text>Username: {userData?.username}</Text>
+            <Img
+              rounded="full"
+              alt="git profile pic"
+              src={userData?.avatar_url}
+              width={70}
+            />
+            <Text
+              as={Link}
+              href="https://github.com/Lanhubs"
+              fontSize={18}
+              fontWeight={600}
+            >
+              {userData?.username}
+            </Text>
           </HStack>
           <Text>Bio: {userData?.bio}</Text>
           {/* <Text>Stars: {userData?.stars}</Text> */}

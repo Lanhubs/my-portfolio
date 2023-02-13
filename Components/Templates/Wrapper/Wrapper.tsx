@@ -59,7 +59,7 @@ const Header = () => {
       gap="1rem"
       position="fixed"
       p="1rem"
-      bg="rgba(0, 0, 0, 0.5)"
+      bg="rgb(0, 0, 0)"
       w="full"
     >
       <SideBar>

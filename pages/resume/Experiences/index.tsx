@@ -6,7 +6,13 @@ type Props = {};
 
 const Experiences = (props: Props) => {
   return (
-    <Stack flexDir="column" gap="2rem" mx="1rem" color="#f3f3f3" h="100%" >
+    <Stack
+      flexDir="column"
+      gap="2rem"
+      mx={{ base: "", md: "1rem" }}
+      color="#f3f3f3"
+      h="100%"
+    >
       <Heading py="5px" borderBottom="2px solid green" w="fit-content">
         EXPERIENCES
       </Heading>
@@ -45,7 +51,7 @@ const Experiences = (props: Props) => {
           </Timeline.Item>
         </Timeline>
       </Stack>
-      <Stack gap="2rem" justifySelf="flex-end" >
+      <Stack gap="2rem" justifySelf="flex-end">
         <Heading borderBottom="2px solid green" w="fit-content">
           EDUCATION
         </Heading>

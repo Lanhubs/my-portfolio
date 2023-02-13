@@ -4,7 +4,6 @@ import {
   Heading,
   HStack,
   Text,
-  VStack,
   Image as Img,
   Stack,
 } from "@chakra-ui/react";
@@ -46,7 +45,7 @@ const userData = () => {
       ) : (
         <Stack flexDir="column" gap="1rem">
           <Heading>Github Details</Heading>
-          <HStack>
+          <HStack as={Link} href="https://github.com/Lanhubs">
             {/* <Avatar src={userData ? userData?.avatar_url: ""} as={Image} /> */}
             <Img
               rounded="full"
@@ -54,19 +53,14 @@ const userData = () => {
               src={userData?.avatar_url}
               width={70}
             />
-            <Text
-              as={Link}
-              href="https://github.com/Lanhubs"
-              fontSize={18}
-              fontWeight={600}
-            >
+            <Text fontSize={18} fontWeight={600}>
               {userData?.username}
             </Text>
           </HStack>
           <Text>Bio: {userData?.bio}</Text>
-          {/* <Text>Stars: {userData?.stars}</Text> */}
+          <Text>Stars: {userData?.stars}</Text>
           {/* github calendar*/}
-          <Box username="Lanhubs" as={GitHubCalendar} />
+          <GitHubCalendar username="Lanhubs" />
         </Stack>
       )}
     </Box>

@@ -65,7 +65,7 @@ export default function Wrapper({ children }: Props) {
               ))}
             </HStack>
           </HStack>
-          <Box>Lanre Portfolio</Box>
+          <Box color="#f3f3f3">Lanre Portfolio</Box>
         </Flex>
 
         {isOpen ? (

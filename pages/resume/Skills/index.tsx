@@ -26,7 +26,7 @@ type skillsProps = {};
 const Skills = () => {
   return (
     <Stack flexDir="column" gap="2rem" color="#f3f3f3">
-      <Heading borderBottom="2px solid green" w="fit-content">
+      <Heading borderBottom="2px solid green" marginTop={{base: "1rem", md: ""}} w="fit-content">
         My Skills
       </Heading>
       <Stack flexDir="column" gap="1">

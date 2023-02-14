@@ -19,7 +19,7 @@ import {
   AiOutlineFile,
   AiOutlineCloudDownload,
 } from "react-icons/ai";
-import { HiBars3 } from "react-icons/hi2";
+import { HiBars3, HiDevicePhoneMobile } from "react-icons/hi2";
 import { GrAndroid } from "react-icons/gr";
 import { useRouter } from "next/router";
 interface Props {
@@ -46,7 +46,7 @@ const links = [
   { name: "About Me", link: "/about", icon: <AiOutlineUser /> },
   { name: "Resume", icon: <AiOutlineFile />, link: "/resume" },
   { name: "Projects", link: "/projects", icon: <AiOutlineIdcard /> },
-  { name: "contact", link: "/contact", icon: <GrAndroid /> },
+  { name: "contact", link: "/contact", icon: <HiDevicePhoneMobile /> },
 ];
 // Header component
 const Header = () => {

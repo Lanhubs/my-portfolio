@@ -17,8 +17,9 @@ const userData = () => {
   const { error, loading, userData } = useGithubStats("Lanhubs");
   const [userDetails, setuserData] = useState({});
   const [isloading, setLoading] = useState(false);
+  console.log(userData)
   useEffect(() => {
-    console.log(userData);
+   
     if (loading) {
       setLoading(true);
     }
@@ -47,6 +48,9 @@ const userData = () => {
           <Heading>Github Details</Heading>
           <HStack as={Link} href="https://github.com/Lanhubs">
             {/* <Avatar src={userData ? userData?.avatar_url: ""} as={Image} /> */}
+            
+            
+            
             <Img
               rounded="full"
               alt="git profile pic"
@@ -58,7 +62,7 @@ const userData = () => {
             </Text>
           </HStack>
           <Text>Bio: {userData?.bio}</Text>
-          <Text>Stars: {userData?.stars}</Text>
+          {/* <Text>Stars: {userData?.stars}</Text> */}
           {/* github calendar*/}
           <GitHubCalendar username="Lanhubs" />
         </Stack>

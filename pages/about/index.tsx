@@ -22,8 +22,8 @@ const index = (props: Props) => {
       <Flex
         direction={{ base: "column", md: "row" }}
         padding={{ base: "2rem", md: "3.5rem 5%" }}
-        height={{ base: "50%", md: "100vh" }}
-        gap={10}
+        height={{ base: "100%", md: "100vh" }}
+        gap={{ base: "1rem", md: 10 }}
       >
         {/* profile image */}
         <VStack
@@ -96,13 +96,13 @@ const index = (props: Props) => {
             lineHeight="8"
           >
             Prolific full stack MERN Stack web developer with a passion for
-            beating my &quot;past-bests &quot;. Improving My Services by building
-            challenging web applications using challenging but innovative web
-            technogies. Always looking for the best technologies to adopt upon
-            beuilding a product with the right designs. Always open to learning
-            new technologies whether to solve a problem or to improve my
-            proficiency. And always open to working with a team to learn and to
-            build great products that best solve the problems.
+            beating my &quot;past-bests &quot;. Improving My Services by
+            building challenging web applications using challenging but
+            innovative web technogies. Always looking for the best technologies
+            to adopt upon beuilding a product with the right designs. Always
+            open to learning new technologies whether to solve a problem or to
+            improve my proficiency. And always open to working with a team to
+            learn and to build great products that best solve the problems.
           </Text>
           <Box
             display="flex"
@@ -114,7 +114,7 @@ const index = (props: Props) => {
             flex={1}
           >
             <Text fontSize="larger" fontWeight="bold">
-            Gwarzo Road, Kano Nigeria
+              Gwarzo Road, Kano Nigeria
             </Text>
             <Text
               _before={{
@@ -127,7 +127,8 @@ const index = (props: Props) => {
                 width: "50px",
                 backgroundColor: "green",
               }}
-              fontSize="larger" fontWeight="bold"
+              fontSize="larger"
+              fontWeight="bold"
             >
               Ga-akanbi Ilorin Nigeria
             </Text>

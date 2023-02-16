@@ -3,10 +3,8 @@ import React from 'react'
 
 const Contacts = () => {
   return (
-    <GridItem gridColumn={2/3} background="#fff" gridRow={2/3} padding="1rem">
-        <Text>
-            Hello
-        </Text>
+    <GridItem background="#fff"  padding="1rem" clipPath={""}>
+        
     </GridItem>
   )
 }

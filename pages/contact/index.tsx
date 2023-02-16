@@ -14,15 +14,14 @@ const index = (props: Props) => {
 
   return (
     <Wrapper>
-      <Box color="#f2f2f2" padding={{base: "10% 7%", md:"7%"}} w="full" height={{base:"full", md: "100vh"}} minH="full">
+      <Box  padding={{base: "10% 7%", md:"7%"}} w="full" height={{base:"full", md: "100vh"}} minH="full">
         <Grid
           
-          gridColumn={{base: 1, md: "auto auto"}}
+          gridTemplateColumns={ "1fr 1fr"}
           m="auto"
-          width={{ base: "90%", md: "70%" }}
-          height="80%"
+          width={{ base: "90%", md: "60%" }}
+          height="90%"
           gap="1rem"
-          background="#f3f3f3"
         >
           <ContactMeForm />
           <ContactIntro />

@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Flex,
   FormControl,
   GridItem,
@@ -50,7 +51,8 @@ const ContactMeForm = () => {
         IconRight={<AiOutlineMail />}
         placeholder="email"
       />
-      <Textarea cols={10} rows={8}/>
+      <Textarea  border="2px solid rgba(0, 0, 0, 0.5)" outline="0" outlineColor={"0"}  cols={10} rows={8}/>
+      <Button backgroundColor="green.700" height="50px" color="#f3f3f3" fontSize={18}>Send Newsletter</Button>
     </GridItem>
   );
 };
@@ -75,8 +77,7 @@ const CusInput = ({ name, type, onChange, IconRight, ...rest }: inputProps) => {
       overflow="hidden"
     >
       <Box
-        as={"span"}
-        
+        as={"span"} 
         padding="10px"
         fontSize={25}
         display="flex"

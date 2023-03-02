@@ -1,10 +1,10 @@
 import { FormControl, Grid, GridItem, Heading, Input, Text } from "@chakra-ui/react";
 import React from "react";
-
+import styles from "../../../styles/Home.module.css"
 const ContactIntro = () => {
   return (
     <GridItem
-      as="form"
+      
       padding="1rem"
       display={"flex"}
       flexDir="column"
@@ -13,13 +13,15 @@ const ContactIntro = () => {
       gap="1rem"
       gridRow={1 / 2}
       gridColumn={1/ 3}
+      as="div"
+      className={styles.aboutMe}
       background="rgba(0, 0, 0, 0.5)"
       color={"#f3f3f3"}
     >
-        <Heading fontSize={40} fontFamily="sans-serif">
-            You can contact me
-        </Heading>
-        <Text >Sending a news letter or using any of the below for jobs, as a client or consultancy. will surely deliver</Text>
+        <Text textTransform={"capitalize"} fontSize={{base: 30, md:40}} as="p" className={styles.aboutMe} fontFamily="sans-serif">
+            contact me
+        </Text>
+        <Text >Sending the newsletter above or using any of the below for jobs, as a client or consultancy. will surely deliver</Text>
     </GridItem>
   );
 };

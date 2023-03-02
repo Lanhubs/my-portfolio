@@ -11,7 +11,7 @@ import dynamic from "next/dynamic";
 export default function Home() {
   return (
     <Wrapper>
-      <Box w="100%" height="100%" width="100%" minWidth="100%">
+      <Box w="100%" height="100%" width="100%"  minWidth="100%">
         <Details />
       </Box>
     </Wrapper>

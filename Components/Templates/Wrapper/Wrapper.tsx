@@ -53,11 +53,12 @@ const Header = () => {
   const route = useRouter();
   return (
     <Box
-      height="10%"
+      height="70px"
       display={flex}
       alignItems="center"
+      
       gap="1rem"
-      position="fixed"
+      position={"absolute"}
       p="1rem"
       bg="rgb(0, 0, 0)"
       w="full"
@@ -197,6 +198,7 @@ const SideShortCut = () => {
   );
 };
 const DownloadResumeBtn = () => {
+  const googleAuthToken = process.env.GOOGLE_AUTH_SECRET_TOKEN;
   return (
     <Tooltip hasArrow={true} placement="right-end" label="download resume">
       <Box
@@ -210,6 +212,11 @@ const DownloadResumeBtn = () => {
         cursor="pointer"
         marginTop="auto"
         mx="auto"
+        as={Link}
+        // href="https://drive.google.com/file/d/1hMyvrsp7WokC67FIzz0HoDEkEdAAzQfE/view?usp=sharing"
+        href="../../../assets/resume/Habeeb-Muhammed-Olanrewaju.pdf"
+        download
+        passHref
       >
         {downloadIcon}
       </Box>

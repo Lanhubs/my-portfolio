@@ -24,7 +24,8 @@ const Details = (props: Props) => {
     <Flex
       direction={{ base: "column", md: "row" }}
       padding={{ base: "2rem", md: "3.5rem 5%" }}
-      height={{ base: "50%", md: "100vh" }}
+      paddingTop={{ base: "10%", md: "" }}
+      height={{ base: "100%", md: "100vh" }}
       gap={10}
     >
       {/* profile image */}
@@ -32,8 +33,9 @@ const Details = (props: Props) => {
         as="div"
         className={styles.profilePic}
         backgroundSize="cover"
-        width={{ base: "", md: "35%" }}
-        height="100%"
+        marginTop={{ base: "15%", md: 0 }}
+        width={{ base: "100%", md: "35%" }}
+        height={{ base: "400px", md: "100%" }}
       >
         <Flex
           height="20%"
@@ -74,32 +76,39 @@ const Details = (props: Props) => {
           </HStack>
         </Flex>
       </VStack>
-      <Stack py="5%" flex={1} height="100%" gap="1rem">
-        <Heading
-          color="whiteAlpha.800"
-          textTransform="capitalize"
-        >
+      <Stack
+        as="div"
+        className={styles.aboutMe}
+        py="5%"
+        alignItems={{ base: "center", md: "" }}
+        flex={1}
+        height="100%"
+        gap="1rem"
+      >
+        <Heading color="whiteAlpha.800" textTransform="capitalize">
           about me
         </Heading>
         <Text color="whiteAlpha.600" w="90%">
-          Prolific full stack MERN Stack web developer with a passion for beating my
-          "past-bests". Improving My Services by building challenging web
-          applications using challenging but helpful web technogies. Always
+          Prolific full stack MERN Stack web developer with a passion for
+          beating my "past-bests". Improving My Services by building challenging
+          web applications using challenging but helpful web technogies. Always
           looking for the best technologies to adopt upon beuilding a product
           with the right designs. Always open to learning new technologies
-          whether to solve a problem or to improve my proficiency. And always open
-          to working with a team to learn and to build great products that best solve
-          the problems.
+          whether to solve a problem or to improve my proficiency. And always
+          open to working with a team to learn and to build great products that
+          best solve the problems.
         </Text>
         <Heading
           color="whiteAlpha.800"
-          alignSelf="flex-start"
-          justifySelf="flex-start"
+          alignSelf={{base: "center", md:""}}
+          justifySelf={{base: "center", md:"flex-start"}}
+          as="h2"
+          
         >
           My Services
         </Heading>
         <Grid
-          gridTemplateColumns="1fr 1fr"
+          gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
           gap={10}
           width="90%"
           as="div"
@@ -109,7 +118,10 @@ const Details = (props: Props) => {
             <GridItem
               padding="1rem"
               key={idx}
+              
               display="flex"
+              alignItems={{ base: "center", md: "" }}
+              textAlign={"center"}
               flexDir="column"
               gap={1}
             >

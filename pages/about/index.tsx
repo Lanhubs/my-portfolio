@@ -30,8 +30,9 @@ const index = (props: Props) => {
           as="div"
           className={styles.profilePic}
           backgroundSize="cover"
-          width={{ base: "", md: "35%" }}
-          height="100%"
+          marginTop={{ base: "10%", md: 0 }}
+          width={{ base: "100%", md: "35%" }}
+          height={{ base: "400px", md: "100%" }}
         >
           <Flex
             height="20%"
@@ -72,7 +73,14 @@ const index = (props: Props) => {
             </HStack>
           </Flex>
         </VStack>
-        <Stack py="5%" flex={1} height="100%">
+        <Stack
+          py="5%"
+          flex={1}
+          height="100%"
+          width={{ base: "100%", md: "" }}
+          as="div"
+          className={styles.aboutMe}
+        >
           <Heading
             color={useColorModeValue("whiteAlpha.800", "blackAlpha.800")}
             fontSize={30}
@@ -91,7 +99,7 @@ const index = (props: Props) => {
             mt="2rem"
             marginTop="2rem"
             color="whiteAlpha.600"
-            w="90%"
+            w={{base: "100%", md:"90%"}}
             fontSize={18}
             lineHeight="8"
           >

@@ -13,6 +13,10 @@ const Contacts = () => {
       flexDir="column"
       alignItems="flex-start"
       gap="1rem"
+      borderTopStartRadius={20}
+      borderTopEndRadius={20}
+
+
       // clipPath={"polygon(100% 100%, 100% 0%, 100% 0%)"}
       background="rgba(255, 255, 255, 0.5)"
       roundedBottom={20}

@@ -214,9 +214,8 @@ const DownloadResumeBtn = () => {
         mx="auto"
         as={Link}
         // href="https://drive.google.com/file/d/1hMyvrsp7WokC67FIzz0HoDEkEdAAzQfE/view?usp=sharing"
-        href="../../../assets/resume/Habeeb-Muhammed-Olanrewaju.pdf"
-        download
-        passHref
+        href="https://drive.google.com/file/d/1hMyvrsp7WokC67FIzz0HoDEkEdAAzQfE/view"
+       
       >
         {downloadIcon}
       </Box>

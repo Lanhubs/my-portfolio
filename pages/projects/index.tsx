@@ -16,35 +16,36 @@ import ccbnaijaImg from "../../assets/ccbnaija.png";
 import topupcliqImg from "../../assets/topupcliq.png";
 import Image, { StaticImageData } from "next/image";
 import Loader from "../../Components/Utils/Loader";
-
-type Props = {
-  image: StaticImageData;
-  children: ReactNode;
+interface Props {
+  // image: StaticImageData;
+  // image: string,
+  image: any | React.ComponentProps<typeof Image>["src"];
   projName: string;
   link: string;
   companyName: string;
   companyLogo: string;
   companyLink: string;
-};
+}
 
 const index = (props: Props) => {
   return (
-      <Wrapper>
-        <Box
-          color="whiteAlpha.700"
-          padding={{ base: "15% 7%", md: "7%" }}
-          height={{ base: "100%", md: "100%" }}
-          width={"100vw"}
+    <Wrapper>
+      <Box
+        color="whiteAlpha.700"
+        padding={{ base: "15% 7%", md: "7%" }}
+        height={{ base: "100%", md: "100%" }}
+        width={"100vw"}
+      >
+        <Heading>Projects</Heading>
+        <Text>Projects worked on so far for companies</Text>
+        <Flex
+          mt="2rem"
+          flexWrap="wrap"
+          gap="1.5rem"
+          flexDir={{ base: "column", md: "row" }}
         >
-          <Heading>Projects</Heading>
-          <Text>Projects worked on so far for companies</Text>
-          <Flex
-            mt="2rem"
-            flexWrap="wrap"
-            gap="1.5rem"
-            flexDir={{ base: "column", md: "row" }}
-          >
-            {projects.map((item, idx) => (
+          {projects.map((item, idx) => {
+            return (
               <Project
                 key={idx}
                 companyLink={item.companyLink}
@@ -54,11 +55,11 @@ const index = (props: Props) => {
                 link={item.link}
                 companyLogo={item.companyLogo}
               />
-            ))}
-          </Flex>
-        </Box>
-      </Wrapper>
-    
+            );
+          })}
+        </Flex>
+      </Box>
+    </Wrapper>
   );
 };
 const Project = ({
@@ -86,8 +87,8 @@ const Project = ({
         flexDir="column"
       >
         <Img
-          as={Image}
           src={image}
+          as={Image}
           alt={projName}
           width="100%"
           flex={1}

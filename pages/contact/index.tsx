@@ -15,13 +15,13 @@ const index = (props: Props) => {
   return (
     <Wrapper>
       <Box
-        padding={{ base: "10% 7%", md: "7%" }}
+        padding={{ base: "10% auto", md: "7%" }}
         w="full"
         height={{ base: "full", md: "100vh" }}
         minH="full"
         >
         <Grid
-        paddingTop={{base: "15%", md: 0}}
+        paddingTop={{base: "17%", md: 0}}
           gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
           m="auto"
           width={{ base: "90%", md: "60%" }}

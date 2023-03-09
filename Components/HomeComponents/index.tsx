@@ -11,11 +11,13 @@ import {
   Stack,
   Text,
   VStack,
+  Link as Anchor,
 } from "@chakra-ui/react";
 import Image from "next/image";
 
 import Link from "next/link";
 import { contactLinks, skills } from "../data";
+import { FaArrowRight } from "react-icons/fa";
 
 type Props = {};
 
@@ -38,7 +40,7 @@ const Details = (props: Props) => {
         height={{ base: "400px", md: "100%" }}
       >
         <Flex
-          height="20%"
+          height="25%"
           marginTop="auto"
           marginBottom="0"
           as="div"
@@ -74,6 +76,30 @@ const Details = (props: Props) => {
               </Box>
             ))}
           </HStack>
+          <Anchor
+            color="#fff"
+            fontWeight="500"
+            fontSize={18}
+            width={{base:"70%", md: "60%"}}
+            // textAlign="center"
+            display="flex"
+            alignItems="center"
+            paddingX="15%"
+            justifyContent="space-between"
+
+            letterSpacing={1}
+            backgroundColor="green.600"
+            marginX="auto"
+            
+            paddingY="10px"
+            rounded="md"
+            href={"https://www.linkedin.com/in/lanre-muh-d-71a721227/"}
+            as={Link}
+          >
+            
+            Hire me
+            <FaArrowRight />
+          </Anchor>
         </Flex>
       </VStack>
       <Stack
@@ -100,10 +126,9 @@ const Details = (props: Props) => {
         </Text>
         <Heading
           color="whiteAlpha.800"
-          alignSelf={{base: "center", md:""}}
-          justifySelf={{base: "center", md:"flex-start"}}
+          alignSelf={{ base: "center", md: "" }}
+          justifySelf={{ base: "center", md: "flex-start" }}
           as="h2"
-          
         >
           My Services
         </Heading>
@@ -118,7 +143,6 @@ const Details = (props: Props) => {
             <GridItem
               padding="1rem"
               key={idx}
-              
               display="flex"
               alignItems={{ base: "center", md: "" }}
               textAlign={"center"}

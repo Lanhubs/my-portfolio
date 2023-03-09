@@ -2,7 +2,7 @@ import { PhoneIcon } from "@chakra-ui/icons";
 import { Box, Flex, GridItem, HStack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
-import { CiLocationOn } from "react-icons/ci";
+import { GrMapLocation } from "react-icons/gr";
 import { AiOutlineAndroid, AiOutlineMail } from "react-icons/ai";
 import style from "../../../styles/Home.module.css";
 import { contactLinks } from "../../../Components/data";
@@ -35,8 +35,8 @@ const Contacts = () => {
           muhammedolanrewaju56@gmail.com
         </Box>
       </HStack>
-      <HStack alignItems={"center"}>
-        <CiLocationOn fontSize={25} />
+      <HStack alignItems={"center"} textColor="#fff">
+       <GrMapLocation size={25} color="white"/>
         <Box>Gwarzo Road Kano Nigeria</Box>
       </HStack>
       <Text>You can also reach me:</Text>

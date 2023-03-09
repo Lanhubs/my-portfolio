@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  createStandaloneToast,
   Flex,
   FormControl,
   GridItem,
@@ -8,12 +9,52 @@ import {
   InputGroup,
   InputLeftAddon,
   Textarea,
+  Toast,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { ChangeEvent, SetStateAction, useEffect } from "react";
 import { AiOutlineMail, AiOutlinePhone, AiOutlineUser } from "react-icons/ai";
 
 const ContactMeForm = () => {
   const [firstName, setFirstName] = React.useState();
+  const [lastName, setLastName] = React.useState();
+  const [email, setEmail] = React.useState();
+  const [message, setMessage] = React.useState("");
+  const { ToastContainer, toast } = createStandaloneToast();
+
+  const sendNewsLetterHandler = async () => {
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        body: JSON.stringify({
+          sender: `${firstName} ${" "} ${lastName}`,
+          email,
+          message,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (res.ok) {
+        const data = await res.json();
+        console.log(data);
+         toast({
+        description: data.message,
+        duration: 3000,
+        position: "top-right",
+        status: "success"
+      })
+      }
+    } catch (error: any) {
+      console.log(error);
+      toast({
+        description: error.message,
+        duration: 3000,
+        position: "top-right",
+        status: "error"
+      })
+    }
+  };
+
   return (
     <GridItem
       //  gridColumn={1}
@@ -25,8 +66,9 @@ const ContactMeForm = () => {
       background="#fff"
       gap="1.5rem"
       justifyContent="center"
-      rounded="lg"
+      rounded={{base: "lg", md: "lg"}}
     >
+      <ToastContainer />
       <CusInput
         type="text"
         onChange={setFirstName}
@@ -35,19 +77,19 @@ const ContactMeForm = () => {
       />
       <CusInput
         type="text"
-        onChange={setFirstName}
+        onChange={setLastName}
         IconRight={<AiOutlineUser />}
         placeholder="last name"
       />
-      <CusInput
+      {/*       <CusInput
         type="tell"
-        onChange={setFirstName}
+        onChange={}
         IconRight={<AiOutlinePhone />}
         placeholder="phone"
-      />
+      /> */}
       <CusInput
-        type=""
-        onChange={setFirstName}
+        type="email"
+        onChange={setEmail}
         IconRight={<AiOutlineMail />}
         placeholder="email"
       />
@@ -58,12 +100,14 @@ const ContactMeForm = () => {
         outlineColor={"0"}
         cols={10}
         rows={8}
+        onChange={(e) => setMessage(e.target.value)}
       />
       <Button
         backgroundColor="green.700"
         height="50px"
         color="#f3f3f3"
         fontSize={18}
+        onClick={() => sendNewsLetterHandler()}
       >
         Send Newsletter
       </Button>
@@ -76,13 +120,12 @@ interface inputProps {
   name?: string;
   type?: string;
   IconRight?: React.ReactNode;
-  onChange?: Function;
+  onChange: Function;
   placeholder?: string;
   iconName?: string;
   rest?: React.Attributes;
-
 }
-const CusInput = ({ name, type, onChange, IconRight, ...rest }:inputProps) => {
+const CusInput = ({ name, type, onChange, IconRight, ...rest }: inputProps) => {
   return (
     <Flex
       alignItems="center"
@@ -111,7 +154,7 @@ const CusInput = ({ name, type, onChange, IconRight, ...rest }:inputProps) => {
         type={type}
         name={name}
         outlineColor="none"
-        onChange={(e) => onChange}
+        onChange={(e) => onChange(e.target.value)}
         {...rest}
       />
     </Flex>

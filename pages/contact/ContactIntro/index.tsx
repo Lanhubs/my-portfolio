@@ -18,7 +18,7 @@ const ContactIntro = () => {
       background="rgba(0, 0, 0, 0.5)"
       color={"#f3f3f3"}
     >
-        <Text textTransform={"capitalize"} fontSize={{base: 30, md:40}} as="p" className={styles.aboutMe} fontFamily="sans-serif">
+        <Text textTransform={"capitalize"} mx={{base: "auto", md: ""}} fontSize={{base: 30, md:40}} as="p" className={styles.aboutMe} fontFamily="sans-serif">
             contact me
         </Text>
         <Text >Sending the newsletter above or using any of the below for jobs, as a client or consultancy. will surely deliver</Text>

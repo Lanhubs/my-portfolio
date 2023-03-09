@@ -49,7 +49,7 @@ const OtherThings = (props: Props) => {
           Hobbies
         </Heading>
         <HStack gap="1rem"  alignItems="center" flexWrap={{base: "wrap", md: "wrap"}}>
-          {hobbies.map((item, idx) => (
+          {hobbies.map((item:any, idx) => (
             <HStack key={idx} textTransform="capitalize" flexWrap="nowrap" width={{base: "35%", md: ""}}>
               <Box
                 color="#fff"

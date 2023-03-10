@@ -9,7 +9,7 @@ type Props = {
   route: NextRouter;
 };
 
-const index = (props: Props) => {
+const ContactMe = (props: Props) => {
   const route:NextRouter = useRouter()
 
   return (
@@ -37,4 +37,4 @@ const index = (props: Props) => {
   );
 };
 
-export default index;
+export default ContactMe;

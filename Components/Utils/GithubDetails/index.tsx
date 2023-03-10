@@ -13,9 +13,9 @@ import GitHubCalendar from "react-github-calendar";
 import { Loader } from "@mantine/core";
 import Image from "next/image";
 import Link from "next/link";
-const userData = () => {
+const GithubDetails = () => {
   const { error, loading, userData } = useGithubStats("Lanhubs");
-  const [isloading, setLoading] = useState(false);
+  
   
   
   return (
@@ -63,4 +63,4 @@ const userData = () => {
   );
 };
 
-export default userData;
+export default GithubDetails;

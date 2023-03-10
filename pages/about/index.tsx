@@ -7,9 +7,11 @@ import {
   Text,
   useColorModeValue,
   VStack,
+  Link as Anchor
 } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
+import { FaArrowRight } from "react-icons/fa";
 import { contactLinks } from "../../Components/data";
 import Wrapper from "../../Components/Templates/Wrapper/Wrapper";
 import styles from "../../styles/Home.module.css";
@@ -71,6 +73,27 @@ const index = (props: Props) => {
                 </Box>
               ))}
             </HStack>
+            <Anchor
+            color="#fff"
+            fontWeight="500"
+            fontSize={18}
+            width={{ base: "70%", md: "60%" }}
+            // textAlign="center"
+            display="flex"
+            alignItems="center"
+            paddingX="15%"
+            justifyContent="space-between"
+            letterSpacing={1}
+            backgroundColor="green.600"
+            marginX="auto"
+            paddingY="10px"
+            rounded="md"
+            href={"https://www.linkedin.com/in/lanre-muh-d-71a721227/"}
+            as={Link}
+          >
+            Hire me
+            <FaArrowRight />
+          </Anchor>
           </Flex>
         </VStack>
         <Stack

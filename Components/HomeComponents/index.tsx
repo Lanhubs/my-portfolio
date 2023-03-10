@@ -80,23 +80,20 @@ const Details = (props: Props) => {
             color="#fff"
             fontWeight="500"
             fontSize={18}
-            width={{base:"70%", md: "60%"}}
+            width={{ base: "70%", md: "60%" }}
             // textAlign="center"
             display="flex"
             alignItems="center"
             paddingX="15%"
             justifyContent="space-between"
-
             letterSpacing={1}
             backgroundColor="green.600"
             marginX="auto"
-            
             paddingY="10px"
             rounded="md"
             href={"https://www.linkedin.com/in/lanre-muh-d-71a721227/"}
             as={Link}
           >
-            
             Hire me
             <FaArrowRight />
           </Anchor>
@@ -116,13 +113,13 @@ const Details = (props: Props) => {
         </Heading>
         <Text color="whiteAlpha.600" w="90%">
           Prolific full stack MERN Stack web developer with a passion for
-          beating my "past-bests". Improving My Services by building challenging
-          web applications using challenging but helpful web technogies. Always
-          looking for the best technologies to adopt upon beuilding a product
-          with the right designs. Always open to learning new technologies
-          whether to solve a problem or to improve my proficiency. And always
-          open to working with a team to learn and to build great products that
-          best solve the problems.
+          beating my &quot;past-bests&quot;. Improving My Services by building
+          challenging web applications using challenging but helpful web
+          technogies. Always looking for the best technologies to adopt upon
+          beuilding a product with the right designs. Always open to learning
+          new technologies whether to solve a problem or to improve my
+          proficiency. And always open to working with a team to learn and to
+          build great products that best solve the problems.
         </Text>
         <Heading
           color="whiteAlpha.800"

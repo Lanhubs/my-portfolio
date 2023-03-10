@@ -15,17 +15,9 @@ import Image from "next/image";
 import Link from "next/link";
 const userData = () => {
   const { error, loading, userData } = useGithubStats("Lanhubs");
-  const [userDetails, setuserData] = useState({});
   const [isloading, setLoading] = useState(false);
-  console.log(userData)
-  useEffect(() => {
-   
-    if (loading) {
-      setLoading(true);
-    }
-    setLoading(false);
-    setuserData(userData);
-  }, []);
+  
+  
   return (
     <Box
       display="flex"
@@ -54,7 +46,7 @@ const userData = () => {
             <Img
               rounded="full"
               alt="git profile pic"
-              src={userData?.avatar_url}
+              src={userData?.avatar_url || "#"}
               width={70}
             />
             <Text fontSize={18} fontWeight={600}>

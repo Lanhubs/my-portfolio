@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
+import {configs} from "../../../Components/Utils/config"
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -10,13 +11,13 @@ export default async function handler(
 
     // Create a new SMTP transporter using your Gmail account credentials
     const transporter = await nodemailer.createTransport({
-      service: process.env.EMAIL_HOST,
+      service:configs.EMAIL_HOST,
       secure: true,
       port: 587,
 
       auth: {
-        user: process.env.EMAIL_USERNAME,
-        pass: process.env.EMAIL_PASSWORD,
+        user: configs.EMAIL_USERNAME,
+        pass: configs.EMAIL_PASSWORD,
       },
     });
 

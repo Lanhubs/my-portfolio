@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Box, Grid, Heading, Text } from "@chakra-ui/react";
 import Wrapper from "../../Components/Templates/Wrapper/Wrapper";
-import { NextRouter, useRouter } from "next/router";
+import { NextRouter, Router, useRouter } from "next/router";
 import ContactMeForm from "./ContactMeForm";
 import ContactIntro from "./ContactIntro";
 import Contacts from "./Contacts";
@@ -10,7 +10,7 @@ type Props = {
 };
 
 const index = (props: Props) => {
-  const route = useRouter();
+  const route:NextRouter = useRouter()
 
   return (
     <Wrapper>

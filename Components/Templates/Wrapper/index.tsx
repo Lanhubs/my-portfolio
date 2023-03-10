@@ -54,7 +54,7 @@ export default function Wrapper({ children }: Props) {
                   rounded={"md"}
                   _hover={{
                     textDecoration: "none",
-                    bg: useColorModeValue("gray.200", "gray.700"),
+                    // bg: useColorModeValue("gray.200", "gray.700"),
                   }}
                   as={Link}
                   href={link.toLowerCase()}
@@ -78,7 +78,7 @@ export default function Wrapper({ children }: Props) {
                   rounded={"md"}
                   _hover={{
                     textDecoration: "none",
-                    bg: useColorModeValue("gray.200", "gray.700"),
+                    // bg: useColorModeValue("gray.200", "gray.700"),
                   }}
                   href={link.toLowerCase()}
                   as={Link}

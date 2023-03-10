@@ -82,7 +82,7 @@ const index = (props: Props) => {
           className={styles.aboutMe}
         >
           <Heading
-            color={useColorModeValue("whiteAlpha.800", "blackAlpha.800")}
+            color={"whiteAlpha.800"}
             fontSize={30}
             textTransform="capitalize"
           >
